@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HAROON CENTER - زانیاری ئەکاونت</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -14,55 +14,59 @@
         }
         
         body {
-            background: #030712;
-            background: radial-gradient(circle at top, #0f172a 0%, #030712 100%);
+            background: #020617;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 1) 0%, #020617 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
         }
+
         .container {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 2px solid #2563eb;
-            box-shadow: 0 0 25px rgba(37, 99, 235, 0.35);
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 40px rgba(37, 99, 235, 0.25), inset 0 0 20px rgba(59, 130, 246, 0.05);
             width: 100%;
             max-width: 440px;
-            border-radius: 28px;
+            border-radius: 32px;
             overflow: hidden;
-            padding: 30px 25px;
+            padding: 35px 25px;
             text-align: center;
             position: relative;
         }
 
-        /* دوگمەی واتساپی بازنەیی */
+        /* دوگمەی واتساپی پڕایمەری گڵۆوی */
         .whatsapp-banner {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 42px;
-            height: 42px;
+            top: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            background: linear-gradient(135deg, #34d399 0%, #059669 100%);
             color: #ffffff;
             text-decoration: none;
             border-radius: 50%;
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
-            border: 1px solid #34d399;
-            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 10;
         }
         .whatsapp-banner:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.8);
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.9);
         }
         .whatsapp-banner svg {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             fill: #ffffff;
         }
         
@@ -70,117 +74,99 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 5px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        /* لۆگۆی سەرەکی هاوشێوەی وێنەکە */
-        .haroon-logo-box {
-            width: 110px;
-            height: 110px;
-            background: linear-gradient(145deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
-            border-radius: 28px;
+        /* لۆگۆی نایاب و سێبەردار */
+        .epic-logo-frame {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e3a8a 100%);
+            border-radius: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.4);
-            border: 1.5px solid #60a5fa;
-            margin-bottom: 15px;
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.6), inset 0 3px 6px rgba(255, 255, 255, 0.5);
+            border: 2px solid #93c5fd;
+            margin-bottom: 18px;
             position: relative;
+            animation: floatLogo 4s ease-in-out infinite;
         }
 
-        .haroon-logo-box svg {
-            width: 72px;
-            height: 72px;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
         }
 
-        /* دیزاینی ناوەکانی ژێر لۆگۆکە ڕێک وەک وێنەکە */
-        .brand-title {
-            font-size: 24px;
+        .epic-logo-frame svg {
+            width: 78px;
+            height: 78px;
+            filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.3));
+        }
+
+        .brand-main-title {
+            font-size: 28px;
             color: #ffffff;
-            font-weight: 800;
-            letter-spacing: 2px;
-            line-height: 1.1;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .brand-divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 6px 0;
-            width: 100%;
-        }
-
-        .brand-divider::before, .brand-divider::after {
-            content: "";
-            height: 1.5px;
-            flex: 1;
-            max-width: 50px;
-            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
-        }
-
-        .brand-divider span {
-            color: #94a3b8;
-            font-size: 13px;
-            font-weight: 700;
+            font-weight: 900;
             letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .brand-subtitle {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #e2e8f0;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1px;
             font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
         }
 
-        .brand-subtitle svg {
-            width: 14px;
-            height: 14px;
-            fill: #ffffff;
-        }
-
-        .account-badge {
-            background: rgba(3, 7, 18, 0.9);
-            border: 1px solid #3b82f6;
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-            padding: 5px 14px;
-            border-radius: 20px;
+        .brand-sub-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 14px;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(96, 165, 250, 0.4);
+            padding: 4px 16px;
+            border-radius: 20px;
+            margin-top: 8px;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
         }
-        .account-badge span {
+        .brand-sub-badge span {
+            color: #60a5fa;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .account-pill {
+            background: rgba(2, 6, 23, 0.85);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+            padding: 6px 16px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .account-pill span {
             font-size: 13px;
             color: #94a3b8;
             font-weight: 600;
         }
-        .account-badge input {
+        .account-pill input {
             background: transparent;
             border: none;
-            color: #60a5fa;
-            font-size: 15px;
-            font-weight: 700;
-            width: 75px;
+            color: #38bdf8;
+            font-size: 16px;
+            font-weight: 800;
+            width: 80px;
             outline: none;
             text-align: center;
             font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
         }
 
         .warning-box {
             background: rgba(239, 68, 68, 0.1);
-            border: 2px solid #ef4444;
-            box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
-            border-radius: 18px;
-            padding: 20px;
+            border: 2px solid rgba(239, 68, 68, 0.6);
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.25);
+            border-radius: 20px;
+            padding: 22px;
             margin-bottom: 20px;
             text-align: center;
         }
@@ -188,36 +174,40 @@
             color: #fca5a5;
             font-size: 16px;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            text-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
         }
         .warning-text {
             color: #fecaca;
             font-size: 13px;
-            line-height: 1.6;
+            line-height: 1.7;
             font-weight: 600;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
         .accept-btn {
             width: 100%;
             background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
             color: #ffffff;
             border: 1px solid #fca5a5;
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 14px;
+            padding: 13px;
+            border-radius: 14px;
+            font-size: 15px;
             font-weight: 800;
             cursor: pointer;
-            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
-            transition: all 0.2s ease;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+            transition: all 0.3s ease;
+        }
+        .accept-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.9);
         }
         .accept-btn:disabled {
-            background: #475569;
-            border-color: #64748b;
+            background: #334155;
+            border-color: #475569;
             color: #94a3b8;
             cursor: not-allowed;
             box-shadow: none;
@@ -230,97 +220,108 @@
         }
         .error-msg {
             color: #f87171;
+            font-weight: 700;
         }
         
         .field-group {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             text-align: right;
         }
         .field-label {
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             color: #94a3b8;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             display: block;
         }
 
         .input-with-copy {
             display: flex;
             align-items: center;
-            background: rgba(3, 7, 18, 0.8);
-            border: 1px solid #1e40af;
-            box-shadow: 0 0 8px rgba(30, 64, 175, 0.2);
-            border-radius: 12px;
+            background: rgba(2, 6, 23, 0.85);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 12px rgba(30, 64, 175, 0.2);
+            border-radius: 14px;
             overflow: hidden;
             transition: all 0.3s ease;
+        }
+        .input-with-copy:focus-within {
+            border-color: #38bdf8;
+            box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
         }
         .field-input {
             flex: 1;
             background: transparent;
             border: none;
-            padding: 9px 12px;
-            font-size: 13px;
-            color: #e2e8f0;
+            padding: 11px 14px;
+            font-size: 14px;
+            color: #f8fafc;
             outline: none;
             width: 100%;
             font-family: 'Poppins', 'Noto Kufi Arabic', sans-serif;
+            font-weight: 600;
         }
         .copy-btn {
-            background: rgba(30, 41, 59, 0.8);
+            background: rgba(30, 41, 59, 0.9);
             border: none;
-            padding: 0 14px;
+            padding: 0 16px;
             cursor: pointer;
             color: #60a5fa;
-            font-size: 12px;
-            font-weight: 700;
-            transition: background 0.2s, color 0.2s;
+            font-size: 13px;
+            font-weight: 800;
+            transition: all 0.2s ease;
             display: flex;
             align-items: center;
             border-right: 1px solid rgba(255, 255, 255, 0.05);
-            min-height: 38px;
+            min-height: 42px;
         }
         .copy-btn:hover {
             background: #2563eb;
             color: #ffffff;
-            box-shadow: 0 0 10px #2563eb;
+            box-shadow: 0 0 15px #2563eb;
         }
         
         .action-fetch-box {
-            margin: 14px 0;
-            background: rgba(3, 7, 18, 0.95);
-            border: 1.5px solid #3b82f6;
-            box-shadow: 0 0 12px rgba(59, 130, 246, 0.25);
-            border-radius: 14px;
-            padding: 12px;
+            margin: 18px 0;
+            background: rgba(2, 6, 23, 0.9);
+            border: 2px solid rgba(59, 130, 246, 0.6);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            border-radius: 16px;
+            padding: 15px;
             text-align: right;
         }
         .action-fetch-box .field-label {
-            color: #60a5fa;
-            font-weight: 700;
-            margin-bottom: 6px;
+            color: #38bdf8;
+            font-weight: 800;
+            margin-bottom: 8px;
+            font-size: 13px;
         }
         .fetch-btn {
             display: block;
             width: 100%;
-            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: #ffffff;
-            border: 1px solid #60a5fa;
+            border: 1px solid #93c5fd;
             cursor: pointer;
-            padding: 9px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
-            transition: all 0.2s ease;
-            margin-top: 8px;
+            padding: 11px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 800;
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        .fetch-btn:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
         }
 
         .code-display-box {
-            background: #020617;
-            border: 1.5px solid #38bdf8;
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3), inset 0 0 6px rgba(56, 189, 248, 0.15);
-            border-radius: 10px;
-            padding: 4px 8px;
+            background: #000000;
+            border: 2px solid #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            padding: 6px 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -329,45 +330,47 @@
             background: transparent;
             border: none;
             color: #38bdf8;
-            font-size: 16px;
-            font-weight: 800;
+            font-size: 18px;
+            font-weight: 900;
             text-align: center;
             width: 100%;
             outline: none;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
         }
         .timer-text {
-            font-size: 10px;
+            font-size: 11px;
             color: #ef4444;
             text-align: center;
-            margin-top: 4px;
-            font-weight: 700;
-            min-height: 14px;
+            margin-top: 6px;
+            font-weight: 800;
+            min-height: 16px;
         }
 
         .show-modal-btn {
             width: 100%;
             background: rgba(30, 41, 59, 0.8);
-            border: 1.5px solid #3b82f6;
+            border: 2px solid rgba(59, 130, 246, 0.5);
             color: #38bdf8;
-            padding: 10px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 700;
+            padding: 12px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 800;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            margin-top: 15px;
+            gap: 10px;
+            margin-top: 18px;
             transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
         }
         .show-modal-btn:hover {
             background: #1e3a8a;
             color: #ffffff;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+            border-color: #38bdf8;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
         }
 
         .modal-overlay {
@@ -376,8 +379,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(3, 7, 18, 0.85);
-            backdrop-filter: blur(10px);
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(15px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -392,16 +395,16 @@
             pointer-events: auto;
         }
         .modal-card {
-            background: rgba(15, 23, 42, 0.98);
+            background: rgba(15, 23, 42, 0.95);
             border: 2px solid #38bdf8;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
-            border-radius: 20px;
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.5);
+            border-radius: 24px;
             width: 100%;
-            max-width: 380px;
-            padding: 20px;
+            max-width: 390px;
+            padding: 24px;
             text-align: right;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
+            transform: scale(0.85);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .modal-overlay.active .modal-card {
             transform: scale(1);
@@ -410,43 +413,50 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 8px;
+            padding-bottom: 10px;
         }
         .modal-title {
             color: #38bdf8;
-            font-size: 14px;
-            font-weight: 800;
+            font-size: 15px;
+            font-weight: 900;
         }
         .close-modal-btn {
             background: rgba(239, 68, 68, 0.2);
             border: 1px solid #ef4444;
             color: #fca5a5;
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             cursor: pointer;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.2s;
+        }
+        .close-modal-btn:hover {
+            background: #ef4444;
+            color: white;
+            box-shadow: 0 0 10px #ef4444;
         }
 
         .toast {
             position: fixed;
-            bottom: 25px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: #10b981;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 700;
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+            padding: 12px 28px;
+            border-radius: 35px;
+            font-size: 14px;
+            font-weight: 800;
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.7);
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .toast.show {
             transform: translateX(-50%) translateY(0);
@@ -456,16 +466,16 @@
 <body>
 
     <div class="container">
-        <!-- دوگمەی واتساپی بازنەیی -->
+        <!-- دوگمەی واتساپ -->
         <a id="whatsappLink" href="#" target="_blank" class="whatsapp-banner" title="پەیوەندی لە ڕێگەی واتساپەوە">
             <svg viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
             </svg>
         </a>
 
-        <!-- لۆگۆ و ناوی براندەکە ڕێک وەک وێنەکە -->
+        <!-- لۆگۆی پڕۆفیشناڵ و بریقەدار -->
         <div class="logo-container">
-            <div class="haroon-logo-box">
+            <div class="epic-logo-frame">
                 <svg viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg">
                     <g transform="translate(85, 85) scale(1.4)">
                         <!-- گەڵای سێوەکە -->
@@ -476,18 +486,12 @@
                 </svg>
             </div>
             
-            <div class="brand-title">HAROON</div>
-            
-            <div class="brand-divider">
-                <span>Center</span>
+            <div class="brand-main-title">HAROON</div>
+            <div class="brand-sub-badge">
+                <span>Center Apple ID</span>
             </div>
             
-            <div class="brand-subtitle">
-                <svg viewBox="0 0 170 170"><path d="M 2,-28 C 8,-38 16,-34 14,-26 C 6,-24 0,-26 2,-28 Z" fill="#ffffff"/><path d="M -18,-20 C -26,-20 -32,-10 -32,2 C -32,18 -18,30 -10,30 C -4,30 -2,27 0,27 C 2,27 4,30 10,30 C 18,30 32,18 32,2 C 32,-2 30,-5 28,-7 C 23,-2 16,0 16,-8 C 16,-18 25,-20 25,-20 C 20,-24 10,-22 0,-18 C -6,-22 -14,-20 -18,-20 Z" fill="#ffffff"/></svg>
-                Apple ID
-            </div>
-            
-            <div class="account-badge">
+            <div class="account-pill">
                 <span>ئەکاونت:</span>
                 <input type="text" id="accSmallInput" value="" readonly>
             </div>
@@ -496,7 +500,7 @@
         <!-- باکسی ئاگاداری -->
         <div id="warningBox" class="warning-box">
             <div class="warning-title">
-                ⚠️ ئاگادارییەکی گرنگ
+                ⚠️️ ئاگادارییەکی گرنگ
             </div>
             <div class="warning-text">
                 تکایە بەهیچ شێوەیەک ئەم Apple ID لە Settings ی موبایلەکەت داخل مەکە! تەنها لە App Store داخل بکە.<br><br>
@@ -627,7 +631,7 @@
                         
                         <div class="code-display-box">
                             <input type="text" id="fetchedResultInput" class="code-input-field" value="" placeholder="------" readonly>
-                            <button class="copy-btn" style="border-radius: 6px; min-height: 28px; padding: 0 10px; font-size: 11px;" onclick="copyText('fetchedResultInput')">کۆپی</button>
+                            <button class="copy-btn" style="border-radius: 8px; min-height: 32px; padding: 0 12px; font-size: 12px;" onclick="copyText('fetchedResultInput')">کۆپی</button>
                         </div>
                         <div id="timerNotice" class="timer-text"></div>
 
